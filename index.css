@@ -1,0 +1,18 @@
+:root {
+	--marrom-escuro: #422020; 
+	--marrom-claro: #754f4d;
+	--marrom-clarinho: #9b756e;
+	--cinza-esverdeado: #8da49b;
+	--cinza-marrom: #a29a90;
+	--branco-marfim: #e9e6df;
+	--bege: #947b50;
+	--verde-musgo: #7b745b;
+	--verde-escuro: #433f2a;
+	--preto: #0e0e0f;
+}
+
+/* escolher tipografia principal(?) */
+
+body {
+	background-color: var(--verde-escuro);
+}
