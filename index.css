@@ -1,18 +1,129 @@
 :root {
-	--marrom-escuro: #422020; 
-	--marrom-claro: #754f4d;
-	--marrom-clarinho: #9b756e;
-	--cinza-esverdeado: #8da49b;
-	--cinza-marrom: #a29a90;
-	--branco-marfim: #e9e6df;
-	--bege: #947b50;
-	--verde-musgo: #7b745b;
-	--verde-escuro: #433f2a;
-	--preto: #0e0e0f;
+  --marrom-escuro: #422020;
+  --marrom-medio: #754f4d;
+  --rosa-nude: #9b756e;
+  --verde-acinzentado: #8da49b;
+  --cinza-neutro: #a29a90;
+  --marfim: #e9e6df;
+  --dourado: #947b50;
+  --oliva: #7b745b;
+  --oliva-escuro: #433f2a;
+  --preto: #0e0e0f;
+
+	--
 }
 
 /* escolher tipografia principal(?) */
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 body {
-	background-color: var(--verde-escuro);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--marfim);
+  background-image: url("public/paper3.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* song */
+
+.song-container-wrapper {
+    position: absolute;
+    margin-left: 0;
+    bottom: 2em;
+    left: -2vw;
+    filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.15));
+}
+.song-container {
+    color: var(--marfim);
+    padding: 10px;
+    padding-left: calc(10px + 2vw);
+    width: calc(400px + 2vw);
+    height: 80px;
+    background-color: var(--dourado);
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+}
+
+.song-btn-container {
+	display: flex;
+	align-items: center;
+}
+
+.song-btn {
+	color: var(--marfim);
+	margin: 0 2px;
+}
+
+.song-btn svg {
+	width: 22px;
+	height: 22px;
+}
+
+#pause-icon {
+  display: none;
+}
+
+/* pallete */
+
+.color {
+  width: 100px;
+  height: 100px;
+}
+.test1 {
+  color: white;
+  background-color: var(--marrom-escuro);
+}
+.test2 {
+  background-color: var(--marrom-medio);
+}
+.test3 {
+  background-color: var(--rosa-nude);
+}
+.test4 {
+  background-color: var(--verde-acinzentado);
+}
+.test5 {
+  background-color: var(--cinza-neutro);
+}
+.test6 {
+  background-color: var(--marfim);
+}
+.test7 {
+  color: white;
+  background-color: var(--dourado);
+}
+.test8 {
+  color: white;
+  background-color: var(--oliva);
+}
+.test9 {
+  color: white;
+  background-color: var(--oliva-escuro);
+}
+.test10 {
+  color: white;
+  background-color: var(--preto);
 }
