@@ -46,6 +46,19 @@ button {
   padding: 0;
 }
 
+.quote,
+.name-container,
+.hermit-card {
+	opacity: 0;
+	transition: opacity 0.7s ease;
+}
+
+.quote.visible,
+.name-container.visible,
+.hermit-card.visible {
+	opacity: 1;
+}
+
 /* quote */
 
 .quote {
@@ -62,6 +75,10 @@ button {
   font-size: 30px;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
   transform: rotate(-8deg);
+}
+
+.quote-text {
+  display: none;
 }
 
 .quote::before {
@@ -97,9 +114,9 @@ button {
 .horse-container {
   position: absolute;
   display: inline-block;
-  top: 410px;
-  left: 80px;
-  transform: translateX(-750px) scaleX(-1);
+  top: 480px;
+  left: 30px;
+  transform: translateX(-800px) scaleX(-1);
   transition: transform 11s ease-out;
 }
 
@@ -318,7 +335,7 @@ button {
 
 .song-container-wrapper {
   transform: translate(-50vw);
-  transition: transform 0.6s ease-out;
+  transition: transform 1.5s ease-out;
   position: absolute;
   margin-left: 0;
   bottom: 2em;

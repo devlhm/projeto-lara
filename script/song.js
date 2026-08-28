@@ -10,6 +10,46 @@ const songs = [
 		artist: "Morissey",
 		path: "let_me_kiss_you.mp3"
 	},
+	{
+		name: "Forever",
+		artist: "Siouxie and the Banshees",
+		path: "forever.mp3"
+	},
+	{
+		name: "Bizarre Love Triangle",
+		artist: "New Order",
+		path: "bizarre_love_triangle.mp3"
+	},
+	{
+		name: "Weird Fishes / Arpeggi",
+		artist: "Radiohead",
+		path: "weird_fishes.mp3"
+	},
+	{
+		name: "Perfect",
+		artist: "Smashing Pumpkins",
+		path: "perfect.mp3"
+	},
+	{
+		name: "Outono",
+		artist: "Djavan",
+		path: "outono.mp3"
+	},
+	{
+		name: "A Letter to Elise",
+		artist: "The Cure",
+		path: "a_letter_to_elise.mp3"
+	},
+	{
+		name: "Matte Kudasai",
+		artist: "King Crimson",
+		path: "matte_kudasai.mp3"
+	},
+	{
+		name: "Já Sei",
+		artist: "Zimbra",
+		path: "ja_sei.mp3"
+	},
 ];
 
 let audio = new Audio();
@@ -25,10 +65,10 @@ const updateSong = () => {
 }
 
 document.addEventListener("click", () => {
-	document.querySelector(".song-container-wrapper").classList.add("active");
+	setTimeout(() => document.querySelector(".song-container-wrapper").classList.add("active"), 4000);
 	updateSong();
 	setTimeout(() => playSong(), 500);
-	setTimeout(() => document.querySelector(".horse-container").classList.add("visible"), 18000);
+	setTimeout(() => document.querySelector(".horse-container").classList.add("visible"), 5000);
 }, { once: true });
 
 const playIcon = document.getElementById("play-icon");

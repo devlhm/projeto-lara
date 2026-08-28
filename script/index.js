@@ -7,6 +7,7 @@ function revealLetters(element, delayBetweenLetters = 50) {
 	const words = text.trim().split(/\s+/);
 
 	element.innerHTML = "";
+	element.style.display = "inline";
 	let globalIndex = 0;
 
 	words.forEach((word, wordIdx) => {
@@ -31,7 +32,8 @@ function revealLetters(element, delayBetweenLetters = 50) {
 		});
 
 		element.appendChild(wordSpan);
-// space between words (outside the letter spans, so line breaks can happen here)
+
+		// space between words (outside the letter spans, so line breaks can happen here)
 		if (wordIdx < words.length - 1) {
 			element.appendChild(document.createTextNode(" "));
 			globalIndex++; // counts the space in the timing, keeps a natural rhythm
@@ -39,4 +41,30 @@ function revealLetters(element, delayBetweenLetters = 50) {
 	});
 }
 
-revealLetters(document.querySelector(".quote-text"));
+// index.js
+const revealables = [
+	document.querySelector(".name-container"),
+	document.querySelector(".quote"),
+	document.querySelector(".hermit-card"),
+];
+
+document.addEventListener("click", function revealAll() {
+	document.removeEventListener("click", revealAll);
+	revealables.forEach((el, i) => {
+		setTimeout(() => el.classList.add("visible"), i * 250);
+	});
+}, { once: true });
+
+document.addEventListener("click", function revealAll() {
+	document.removeEventListener("click", revealAll);
+	revealables.forEach((el, i) => {
+		setTimeout(() => {
+			if (el.classList.contains("quote")) {
+				setTimeout(() => el.classList.add("visible"), 500);
+				setTimeout(() => revealLetters(document.querySelector(".quote-text")), 1000);
+			} else {
+				el.classList.add("visible");
+			}
+		}, i * 250);
+	});
+}, { once: true });
