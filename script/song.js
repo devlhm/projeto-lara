@@ -1,25 +1,19 @@
 // song controller
 const songs = [
 	{
+		name: "Wild Horses",
+		artist: "Rolling Stones",
+		path: "wild_horses.mp3"
+	},
+	{
 		name: "Let Me Kiss You",
 		artist: "Morissey",
 		path: "let_me_kiss_you.mp3"
 	},
-	{
-		name: "Let Me Kiss You 2",
-		artist: "Morissey",
-		path: "let_me_kiss_you2.mp3"
-	},
-	{
-		name: "Let Me Kiss You 3",
-		artist: "Morissey",
-		path: "let_me_kiss_you3.mp3"
-	}
 ];
 
 let audio = new Audio();
-audio.volume = 0.005;
-audio.currentTime = 5;
+audio.volume = 0.3;
 
 let songIndex = 0;
 
@@ -31,9 +25,10 @@ const updateSong = () => {
 }
 
 document.addEventListener("click", () => {
-	updateSong();
-	playSong();
 	document.querySelector(".song-container-wrapper").classList.add("active");
+	updateSong();
+	setTimeout(() => playSong(), 500);
+	setTimeout(() => document.querySelector(".horse-container").classList.add("visible"), 18000);
 }, { once: true });
 
 const playIcon = document.getElementById("play-icon");
