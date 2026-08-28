@@ -19,6 +19,7 @@ const songs = [
 
 let audio = new Audio();
 audio.volume = 0.005;
+audio.currentTime = 5;
 
 let songIndex = 0;
 
@@ -32,6 +33,7 @@ const updateSong = () => {
 document.addEventListener("click", () => {
 	updateSong();
 	playSong();
+	document.querySelector(".song-container-wrapper").classList.add("active");
 }, { once: true });
 
 const playIcon = document.getElementById("play-icon");
